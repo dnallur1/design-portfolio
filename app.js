@@ -68,3 +68,32 @@ if(drawingArea){
  // Three staggered bursts replay automatically before any visitor interaction.
  addFirework(.2,.38,true);addFirework(.5,.62,true);addFirework(.8,.32,true);
 }
+
+// Keep the proposal contents in sync with the reader's scroll position.
+(()=>{
+ const nav=document.querySelector('.proposal-section-nav');
+ if(!nav)return;
+ const links=[...nav.querySelectorAll('a[href^="#"]')];
+ const targets=links.map(link=>document.getElementById(link.hash.slice(1)));
+ links.forEach((link,index)=>link.addEventListener('click',event=>{const target=targets[index];if(!target)return;event.preventDefault();history.pushState(null,'',link.hash);window.scrollTo({top:window.scrollY+target.getBoundingClientRect().top-30,behavior:'instant'});update()}));
+ let scheduled=false;
+ function update(){
+  scheduled=false;
+  let active=0;
+  targets.forEach((target,index)=>{if(target&&target.getBoundingClientRect().top<=130)active=index});
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-2)active=links.length-1;
+  links.forEach((link,index)=>{if(index===active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')});
+ }
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update)}},{passive:true});
+ window.addEventListener('resize',update);
+ window.addEventListener('hashchange',update);
+ update();
+})();
+
+// Select a stage in the proposal; the storyboard remains visible below.
+(()=>{
+ const list=document.querySelector('.journey-stage-tabs');if(!list)return;
+ const tabs=[...list.querySelectorAll('[role="tab"]')];
+ function select(index,focus=false){tabs.forEach((tab,i)=>{const active=i===index;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;document.getElementById(tab.getAttribute('aria-controls')).hidden=!active});if(focus)tabs[index].focus()}
+ tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>select(index));tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();select(next,true)})});
+})();
