@@ -1,6 +1,6 @@
 # Devi Priya Nalluri — Design Portfolio
 
-A three-page AI for Interdisciplinary Design Portfolio featuring **Winter Bear** album artwork and the **3D Studio** environment.
+An AI for Interdisciplinary Design Portfolio featuring **Winter Bear** album artwork, the **3D Studio** environment, and **Did You See That?**, a game proposal.
 
 ## Preview locally
 
@@ -15,6 +15,7 @@ In this repository’s **Settings → Pages**, set the source to **GitHub Action
 - `index.html`: homepage and interactive fireworks
 - `winter-bear.html`: album cover and process
 - `studio.html`: studio imagery and camera walkthrough
-- `assets/`: project images and video
+- `game-proposal.html`: game proposal introduction and concept visual
+- `assets/`: project images, illustrations, and video
 
 The three starter fireworks animate automatically. Each click or tap adds one firework at the chosen position. Added fireworks fade after 40 seconds or clear when scrolling past the drawing area. Reduced-motion preferences are respected.
