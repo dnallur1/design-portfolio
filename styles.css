@@ -34,3 +34,18 @@ body{background:radial-gradient(ellipse at 100% 0%,#18243b55,transparent 42%),va
 @media(max-width:650px){.header{gap:14px}nav{gap:2px 16px;max-width:285px}.game-project-card{grid-template-columns:1fr}.game-project-card .card-meta{padding:24px}.game-title-block{padding:45px 0 35px}.game-title-block h1{font-size:64px}.game-visual{padding:16px}.game-visual-heading{gap:14px;align-items:start}.game-visual-heading p:last-child{font-size:26px}.discovery-counter{padding:10px 14px;gap:6px;flex-direction:column;border-radius:18px}.discovery-counter span{font-size:14px}.discovery-counter strong{font-size:24px}.room-comparison{grid-template-columns:1fr;gap:26px}.room-label{flex-wrap:nowrap}.change-inset{flex-direction:column;align-items:stretch;gap:22px}.inset-explanation p:last-child{font-size:18px}.detail-pair{justify-content:center;gap:18px}.detail-pair figure{max-width:none;width:38%}.game-intro-copy{grid-template-columns:1fr;gap:25px;padding-top:35px}.game-section-marker h2 br{display:none}.game-section-marker>span{margin-bottom:18px}.game-back-link{margin-top:50px}}
 
 .reflection-title h1{font-size:clamp(24px,7.5vw,110px);white-space:nowrap}.game-writing p+p{margin-top:18px}.reflection-visual .game-visual-heading{margin-bottom:28px}
+
+/* Gameplay evidence and personal observations */
+.case-study-moments{grid-column:1/-1;margin-top:42px;min-width:0}
+.moments-title{font-size:clamp(28px,3vw,42px);margin:0 0 36px}
+.research-moment{border-top:1px solid var(--line);padding:36px 0 42px}
+.moment-heading{margin-bottom:26px}.moment-heading .eyebrow{display:block;margin-bottom:12px}
+.moment-heading h3{font-size:clamp(24px,2.6vw,36px);line-height:1.2;max-width:900px;margin:0}
+.moment-layout{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.moment-layout figure{margin:0;padding:18px;background:var(--card);min-width:0}
+.moment-layout .image-button{width:100%;padding:0;margin:0}
+.moment-layout figcaption{font-size:14px;line-height:1.6;color:var(--muted);margin-top:14px}
+.moment-notes>div+div{margin-top:24px}
+.moment-notes h4{font-family:var(--sans);font-size:18px;line-height:1.5;margin:0 0 8px;color:var(--accent)}
+.moment-notes p{font-size:16px;line-height:1.85;color:var(--muted);margin:0}
+@media(max-width:760px){.moment-layout{grid-template-columns:1fr;gap:24px}.case-study-moments{margin-top:20px}.research-moment{padding:28px 0 36px}}
