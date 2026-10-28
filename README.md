@@ -1,6 +1,6 @@
 # Devi Priya Nalluri — Design Portfolio
 
-An AI for Interdisciplinary Design Portfolio featuring **Winter Bear** album artwork, the **3D Studio** environment, and **Did You See That?**, a game proposal.
+An AI for Interdisciplinary Design Portfolio featuring **Winter Bear** album artwork, the **3D Studio** environment, and **Out of Reflection**, a game proposal.
 
 ## Preview locally
 
